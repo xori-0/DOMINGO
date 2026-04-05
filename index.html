@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Chat con Chema</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <div id="welcome-screen">
+      <div class="welcome-inner">
+        <div class="welcome-avatar">
+          <img src="fotoperfil.jpg" alt="Foto de perfil de Chema">
+        </div>
+        <h1>Chema te ha añadido</h1>
+        <p class="welcome-sub">Curso de climatización de centros de datos. Prepárate.</p>
+        <input type="text" id="name-input" placeholder="Tu nombre..." autocomplete="off">
+        <div id="name-error" class="name-error"></div>
+        <button id="start-btn" disabled>Entrar al chat</button>
+      </div>
+    </div>
+
+    <div id="chat-screen" class="hidden">
+      <div class="chat-header">
+        <div class="header-back">‹</div>
+        <div class="header-avatar">
+          <img src="fotoperfil.jpg" alt="Foto de perfil de Chema">
+        </div>
+        <div class="header-info">
+          <p class="header-name">Chema</p>
+          <p class="header-status">en línea</p>
+        </div>
+        <div class="header-icons">📞 ⋮</div>
+      </div>
+
+      <div id="messages" class="messages-area"></div>
+      <div id="interaction-zone" class="interaction-zone hidden"></div>
+
+      <div class="bottom-bar">
+        <div class="input-fake">Escribe un mensaje...</div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
