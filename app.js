@@ -32,7 +32,7 @@ function registrarAccion(bloqueId, textoOpcion, esCorrecta = null) {
 }
 // --- FIN CONFIGURACIÓN FIREBASE ---
 
-const AUDIO_EXT = 'm4a';
+const AUDIO_EXT = 'mp3';
 const IMAGE_EXT = 'png';
 const VALID_NAMES = ['adrian', 'alejandro', 'carlos', 'manuel', 'miguel', 'luca', 'mihai'];
 
