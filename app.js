@@ -971,6 +971,8 @@ function enterBlock(blockId) {
   }
 }
 
+window.saltar = enterBlock;
+
 const nameInput = $('#name-input');
 const startBtn = $('#start-btn');
 const nameError = $('#name-error');
