@@ -1008,18 +1008,15 @@ startBtn.addEventListener('click', () => {
 });
 
 
-// --- TRUCO PARA SALTOS (F12) ---
-window.saltar = function(bloque) {
-  // Ocultamos la pantalla de inicio y mostramos el chat por si saltas directamente
-  document.querySelector('#welcome-screen').classList.add('hidden');
-  document.querySelector('#chat-screen').classList.remove('hidden');
-
-  // Si saltas sin poner nombre, te asignamos uno por defecto para que no explote
-  if (!userName) {
-    userName = 'Tester';
-    persona = 'Blaster';
-  }
-
-  console.log('🚀 Saltando directamente al bloque:', bloque);
-  enterBlock(bloque);
+// Pegar esto al final de app.js
+window.saltar = function(bloqueId) {
+    // Forzamos el salto aunque estemos en la pantalla de bienvenida
+    userName = userName || "Admin";
+    persona = persona || "Blaster";
+    document.getElementById('welcome-screen').classList.add('hidden');
+    document.getElementById('chat-screen').classList.remove('hidden');
+    
+    // Llamamos a la función interna
+    enterBlock(bloqueId);
+    console.log("Saltando a: " + bloqueId);
 };
