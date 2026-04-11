@@ -971,7 +971,6 @@ function enterBlock(blockId) {
   }
 }
 
-window.saltar = enterBlock;
 
 const nameInput = $('#name-input');
 const startBtn = $('#start-btn');
@@ -1007,3 +1006,20 @@ startBtn.addEventListener('click', () => {
 
   setTimeout(() => enterBlock('intro'), 300);
 });
+
+
+// --- TRUCO PARA SALTOS (F12) ---
+window.saltar = function(bloque) {
+  // Ocultamos la pantalla de inicio y mostramos el chat por si saltas directamente
+  document.querySelector('#welcome-screen').classList.add('hidden');
+  document.querySelector('#chat-screen').classList.remove('hidden');
+
+  // Si saltas sin poner nombre, te asignamos uno por defecto para que no explote
+  if (!userName) {
+    userName = 'Tester';
+    persona = 'Blaster';
+  }
+
+  console.log('🚀 Saltando directamente al bloque:', bloque);
+  enterBlock(bloque);
+};
